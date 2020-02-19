@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-var schedule = require('node-schedule');
+let interval_ref;
 
 module.exports ={
   track_bump: function(msg, prefix){  
@@ -9,14 +9,18 @@ module.exports ={
       console.log('Bump initiated')
       msg.delete(1000);
 
-      let bump_2 = schedule.scheduleJob('0 0 */2 * * *', function(){
+      const bump_message = setInterval(function(){
         msg.channel.send("!d bump");
-      });
+      }, 7300000)
+
+      interval_ref = bump_message;
     }
     else if(msg.content.toLowerCase() == prefix + "stop_bump" && msg.author.id == '360790875560869889'){
       console.log('Bump stopped')
 
-      console.log(schedule.scheduledJobs['<Anonymous Job 1>'].cancel());
+      clearInterval(interval_ref);
     }
-  }
+  },
+
+  
 }
