@@ -9,7 +9,6 @@
   "author": "metab0i",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^11.5.1",
-    "node-schedule": "^1.3.2"
+    "discord.js": "^11.5.1"
   }
 }
