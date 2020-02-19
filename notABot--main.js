@@ -14,9 +14,7 @@ const prefix = "+";
  */
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.channels.get();
   client.user.setStatus("online");
-  //client.user.setActivity(client.guilds.size + ' SVRs|%help.', { type: 'WATCHING' });
 });
 
 client.on('message', msg => {
